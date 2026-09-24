@@ -132,11 +132,36 @@ footer{margin-top:0}
 .specs div{border:1px solid #ffffff10;padding:16px;border-radius:12px}.specs b{color:#c7a66a;margin-right:8px}.specs span{font-size:12px;color:#cbd0d5}
 .model-controls{display:flex;gap:8px;margin-bottom:18px}.model-controls button{background:#171d23;border:1px solid #ffffff16;color:#fff;padding:11px 16px;border-radius:9px;cursor:pointer}.model-controls button:hover{border-color:#c7a66a;color:#c7a66a}
 @media(max-width:850px){.studio-grid{grid-template-columns:1fr}.model-stage{height:430px}.studio-panel{padding:28px}}
+
+.gallery-section{background:#090c10}
+.gallery-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px;margin-top:42px}
+.gallery-item{position:relative;padding:0;border:0;overflow:hidden;border-radius:18px;background:#111;cursor:pointer;text-align:left}
+.gallery-item.large{grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s,filter .7s}
+.gallery-item:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000b)}
+.gallery-item span{position:absolute;z-index:2;left:20px;bottom:18px;color:#fff;font-size:10px;letter-spacing:.18em}
+.gallery-item:hover img{transform:scale(1.06);filter:saturate(1.12)}
+.lightbox{position:fixed;inset:0;background:#020304ed;z-index:100;display:none;align-items:center;justify-content:center;padding:40px}
+.lightbox.open{display:flex}
+.lightbox figure{max-width:min(1100px,88vw);max-height:88vh;margin:0;text-align:center}
+.lightbox img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:12px;box-shadow:0 30px 100px #000}
+.lightbox figcaption{color:#cfd4d8;margin-top:14px;font-size:12px;letter-spacing:.08em}
+.lightbox button{position:absolute;border:1px solid #ffffff22;background:#111a;color:#fff;border-radius:50%;cursor:pointer}
+.lightbox-close{right:28px;top:25px;width:46px;height:46px;font-size:28px}
+.lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:38px}
+.lightbox-prev{left:25px}.lightbox-next{right:25px}
+.process-strip{border-top:1px solid #ffffff0d;border-bottom:1px solid #ffffff0d;background:#0b0f13}
+.process-strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.process-strip-grid div{padding:28px 20px;border-right:1px solid #ffffff0d;display:flex;gap:14px;align-items:center}
+.process-strip-grid div:last-child{border-right:0}
+.process-strip b{color:#c7a66a;font-size:12px}.process-strip span{font-size:11px;color:#b9c0c6;letter-spacing:.04em}
+@media(max-width:800px){.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px}.gallery-item.large{grid-row:auto;grid-column:span 2}.process-strip-grid{grid-template-columns:1fr 1fr}.process-strip-grid div:nth-child(2){border-right:0}}
+@media(max-width:520px){.gallery-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(4,220px)}.gallery-item.large{grid-column:auto}.process-strip-grid{grid-template-columns:1fr}.process-strip-grid div{border-right:0;border-bottom:1px solid #ffffff0d}}
 </style>
 </head>
 <body>
 <div class="topbar">HATİCE KARABAŞ MÜHENDİSLİK <span>•</span> MİMARİ · MÜHENDİSLİK · KONUT</div>
-<nav><div class="logo">HATİCE KARABAŞ <span>MÜHENDİSLİK</span></div><div class="links"><a href="#about">Hakkımızda</a><a href="#profile">Profil</a><a href="#projects">Projeler</a><a href="#services">Hizmetler</a><a href="#process">Süreç</a><a href="#studio">3D STÜDYO</a><a href="#contact">İletişim</a></div></nav>
+<nav><div class="logo">HATİCE KARABAŞ <span>MÜHENDİSLİK</span></div><div class="links"><a href="#about">Hakkımızda</a><a href="#profile">Profil</a><a href="#projects">Projeler</a><a href="#services">Hizmetler</a><a href="#process">Süreç</a><a href="#gallery">GALERİ</a><a href="#studio">3D STÜDYO</a><a href="#contact">İletişim</a></div></nav>
 
 <header class="hero cinematic-hero">
 <div class="blueprint-grid" aria-hidden="true"></div>
@@ -272,6 +297,36 @@ footer{margin-top:0}
 </div></section>
 
 
+
+<section id="gallery" class="section gallery-section">
+  <div class="container">
+    <div class="eyebrow">PROJE GALERİSİ</div>
+    <h2 class="section-title">Mimariyi <span>detaylarıyla</span> görün.</h2>
+    <p class="section-lead">Konsept, cephe, yaşam alanları ve mimari detaylardan seçilmiş görsel sunum.</p>
+    <div class="gallery-grid">
+      <button class="gallery-item large" data-full="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90" data-caption="Modern konut — dış cephe">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85" alt="Modern konut dış cephe" loading="lazy"><span>DIŞ CEPHE</span>
+      </button>
+      <button class="gallery-item" data-full="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90" data-caption="Modern yaşam alanı — iç mimari">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Modern iç mekan" loading="lazy"><span>İÇ MEKÂN</span>
+      </button>
+      <button class="gallery-item" data-full="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90" data-caption="Villa konsepti — mimari tasarım">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Villa mimarisi" loading="lazy"><span>VİLLA</span>
+      </button>
+      <button class="gallery-item" data-full="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=90" data-caption="Çağdaş yaşam — detay">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Çağdaş yaşam alanı" loading="lazy"><span>DETAY</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Kapat">×</button>
+  <button class="lightbox-prev" aria-label="Önceki">‹</button>
+  <figure><img id="lightboxImage" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure>
+  <button class="lightbox-next" aria-label="Sonraki">›</button>
+</div>
+
 <section id="studio" class="section studio-section">
   <div class="container">
     <div class="eyebrow">INTERAKTİF MİMARİ STÜDYO</div>
@@ -309,6 +364,16 @@ footer{margin-top:0}
         <a href="#contact" class="btn btn-primary">PROJE TALEBİ OLUŞTUR</a>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="process-strip">
+  <div class="container process-strip-grid">
+    <div><b>01</b><span>Keşif & ihtiyaç analizi</span></div>
+    <div><b>02</b><span>Konsept & mimari tasarım</span></div>
+    <div><b>03</b><span>Teknik proje & mühendislik</span></div>
+    <div><b>04</b><span>Sunum & proje takibi</span></div>
   </div>
 </section>
 
@@ -369,5 +434,22 @@ let modelRotation = -24;
 function renderModel(){const b=document.getElementById('building'); if(b)b.style.transform=`translate(-50%,-50%) rotateY(${modelRotation}deg) rotateX(5deg)`;}
 function rotateModel(dir){modelRotation += dir*28; renderModel();}
 function resetModel(){modelRotation=-24; renderModel();}
+</script>
+
+<script>
+(() => {
+  const items=[...document.querySelectorAll('.gallery-item')];
+  const box=document.getElementById('lightbox'), img=document.getElementById('lightboxImage'), cap=document.getElementById('lightboxCaption');
+  let current=0;
+  function open(i){current=i;const el=items[current];img.src=el.dataset.full;img.alt=el.querySelector('img').alt;cap.textContent=el.dataset.caption;box.classList.add('open');box.setAttribute('aria-hidden','false');}
+  function close(){box.classList.remove('open');box.setAttribute('aria-hidden','true');img.src='';}
+  function move(n){current=(current+n+items.length)%items.length;open(current);}
+  items.forEach((el,i)=>el.addEventListener('click',()=>open(i)));
+  document.querySelector('.lightbox-close')?.addEventListener('click',close);
+  document.querySelector('.lightbox-prev')?.addEventListener('click',()=>move(-1));
+  document.querySelector('.lightbox-next')?.addEventListener('click',()=>move(1));
+  box?.addEventListener('click',e=>{if(e.target===box)close()});
+  document.addEventListener('keydown',e=>{if(!box.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1)});
+})();
 </script>
 </body></html>
