@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hatice Karabaş Mühendislik</title>
+<meta name="description" content="Hatice Karabaş Mühendislik — modern mimari, mühendislik ve konut projeleri.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:#0b0d10;color:#fff}
+:root{--gold:#c7a66a;--muted:#aeb4bc;--panel:#12161b}
+nav{position:fixed;z-index:10;top:0;left:0;right:0;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#07090ccc,transparent);backdrop-filter:blur(8px)}
+.logo{font-weight:800;letter-spacing:.08em}.logo span{color:var(--gold)}
+nav a{color:#fff;text-decoration:none;margin-left:26px;font-size:14px}.hero{min-height:100vh;display:grid;place-items:center;padding:120px 7%;position:relative;overflow:hidden;background:
+linear-gradient(90deg,#07090de8 0%,#07090d99 45%,#07090d22 100%),
+url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,#0b0d10)}
+.hero-content{max-width:850px;position:relative;z-index:2}.eyebrow{color:var(--gold);letter-spacing:.28em;font-size:13px;font-weight:700}.hero h1{font-size:clamp(48px,7vw,94px);line-height:.95;margin:22px 0}.hero h1 small{display:block;font-size:.3em;line-height:1.3;letter-spacing:.2em;color:#d9dde2;margin-top:22px}.hero p{font-size:19px;line-height:1.7;color:#d2d6db;max-width:680px}.buttons{display:flex;gap:14px;margin-top:32px}.btn{padding:15px 24px;border:1px solid #ffffff33;border-radius:4px;text-decoration:none;color:#fff}.btn.primary{background:var(--gold);color:#111;border-color:var(--gold);font-weight:700}
+section{padding:110px 7%}.section-title{max-width:760px;margin-bottom:50px}.kicker{color:var(--gold);letter-spacing:.2em;font-size:12px;font-weight:700}.section-title h2{font-size:clamp(34px,5vw,62px);margin:14px 0}.section-title p{color:var(--muted);line-height:1.8}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}.about-img{height:520px;border-radius:8px;background:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85") center/cover}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:35px}.stat{background:var(--panel);padding:25px;border:1px solid #ffffff0c}.stat b{display:block;font-size:24px;margin-bottom:7px}.stat span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--panel);border:1px solid #ffffff0b;border-radius:8px;overflow:hidden;transition:.35s}.card:hover{transform:translateY(-7px);border-color:#c7a66a55}.card-img{height:270px;background-size:cover;background-position:center}.card-body{padding:25px}.card-body h3{margin:0 0 10px}.card-body p{color:var(--muted);line-height:1.6;font-size:14px}.featured{min-height:600px;display:flex;align-items:flex-end;border-radius:10px;overflow:hidden;background:linear-gradient(0deg,#07090ee8,#07090d22),url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=85") center/cover}.featured-inner{padding:55px;max-width:850px}.featured h2{font-size:clamp(38px,5vw,68px);margin:12px 0}.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{padding:24px 15px;background:var(--panel);border-top:2px solid var(--gold)}.step b{color:var(--gold)}.step p{color:var(--muted);font-size:13px}.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}.form{background:var(--panel);padding:30px;border-radius:8px}.form input,.form select,.form textarea{width:100%;margin-bottom:14px;padding:15px;background:#0b0e12;border:1px solid #ffffff18;color:#fff;border-radius:4px}.form textarea{height:140px;resize:vertical}.form button{width:100%;padding:15px;background:var(--gold);border:0;font-weight:800;border-radius:4px}.footer{padding:40px 7%;border-top:1px solid #ffffff0d;color:var(--muted);display:flex;justify-content:space-between}
+@media(max-width:850px){nav .links{display:none}.about,.contact{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.about-img{height:360px}}
+@media(max-width:560px){section{padding:80px 5%}.grid{grid-template-columns:1fr}.hero{padding:110px 5%}.hero p{font-size:16px}.buttons{flex-direction:column}.btn{text-align:center}.footer{flex-direction:column;gap:15px}}
+
+/* Premium cinematic motion + profile */
+body{overflow-x:hidden}
+.hero{background-size:cover;animation:heroZoom 14s ease-out both}
+@keyframes heroZoom{from{background-size:110% auto;transform:scale(1.01)}to{background-size:100% auto;transform:scale(1)}}
+.hero-content{animation:heroIn 1.1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}
+.profile-section{padding-top:45px;padding-bottom:45px}
+.profile-card{position:relative;display:grid;grid-template-columns:330px 1fr;gap:50px;align-items:center;max-width:1100px;margin:auto;padding:35px;background:linear-gradient(135deg,#151a20,#0e1115);border:1px solid #c7a66a30;border-radius:18px;overflow:hidden;box-shadow:0 25px 80px #0008}
+.profile-card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,#c7a66a0d,transparent);animation:sweep 6s linear infinite}
+@keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.profile-photo-wrap{position:relative;width:280px;height:340px;margin:auto}
+.profile-glow{position:absolute;inset:-20px;border-radius:24px;background:#c7a66a33;filter:blur(30px);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45;transform:scale(1.06)}}
+.profile-photo{position:relative;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:18px;border:1px solid #c7a66a66;box-shadow:0 18px 50px #0009}
+.profile-copy h2{font-size:clamp(40px,6vw,76px);line-height:.95;margin:12px 0 8px}
+.profile-copy p{font-size:18px;color:#d7b979;letter-spacing:.15em;font-weight:700}
+.profile-copy span{color:#aeb4bc;line-height:1.8}
+.profile-line{width:110px;height:2px;background:#c7a66a;margin:22px 0}
+.card,.stat,.step,.featured{will-change:transform}
+.card{animation:cardFloat 7s ease-in-out infinite}
+.card:nth-child(2){animation-delay:-2s}.card:nth-child(3){animation-delay:-4s}
+@keyframes cardFloat{50%{transform:translateY(-5px)}}
+@media (min-width:1600px){body{font-size:18px}.hero-content{max-width:1100px}.hero h1{font-size:110px}}
+@media(max-width:700px){.profile-card{grid-template-columns:1fr;padding:25px;text-align:center}.profile-photo-wrap{width:230px;height:290px}.profile-line{margin:20px auto}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="logo">HATİCE KARABAŞ <span>MÜHENDİSLİK</span></div><div class="links"><a href="#about">Hakkımızda</a><a href="#profile">Profil</a><a href="#projects">Projeler</a><a href="#services">Hizmetler</a><a href="#process">Süreç</a><a href="#contact">İletişim</a></div></nav>
+
+<header class="hero">
+<div class="hero-content">
+<div class="eyebrow">MİMARİ • MÜHENDİSLİK • YAPI</div>
+<h1>Geleceğin Yapılarını Bugünden Tasarlıyoruz.<small>HATİCE KARABAŞ MÜHENDİSLİK</small></h1>
+<p>Modern mühendislik, güçlü mimari ve güvenilir yapı çözümleriyle yaşam alanlarını geleceğe taşıyoruz.</p>
+<div class="buttons"><a class="btn primary" href="#projects">PROJELERİMİZ</a><a class="btn" href="#profile">HATİCE KARABAŞ</a><a class="btn" href="#contact">BİZE ULAŞIN</a></div>
+</div></header>
+
+<section id="about"><div class="section-title"><div class="kicker">HAKKIMIZDA</div><h2>Mühendislikte Güven, Mimariyle Gelecek.</h2><p>Hatice Karabaş Mühendislik; modern konut, villa, dubleks ve mühendislik projeleri için estetik, işlevsel ve teknoloji odaklı çözümler sunan premium bir yapı markası deneyimi sunar.</p></div>
+<div class="about"><div class="about-img"></div><div><p style="color:#b9bec6;line-height:1.9">Her projeyi yalnızca bir yapı olarak değil, uzun yıllar değer üretecek bir yaşam alanı olarak ele alan modern bir tasarım yaklaşımı.</p><div class="stats"><div class="stat"><b>Modern Tasarım</b><span>Çağdaş mimari yaklaşım</span></div><div class="stat"><b>Güçlü Mühendislik</b><span>Teknoloji odaklı çözümler</span></div><div class="stat"><b>Kaliteli Yapı</b><span>Detaylara odaklanan süreç</span></div><div class="stat"><b>Güvenilir Proje</b><span>Profesyonel proje yaklaşımı</span></div></div></div></div></section>
+
+
+<section id="profile" class="profile-section">
+  <div class="profile-card">
+    <div class="profile-photo-wrap">
+      <div class="profile-glow"></div>
+      <img src="assets/hatice-karabas-profile.jpg" alt="Hatice Karabaş" class="profile-photo">
+    </div>
+    <div class="profile-copy">
+      <div class="kicker">KURUMSAL PROFİL</div>
+      <h2>HATİCE KARABAŞ</h2>
+      <p>HATİCE KARABAŞ MÜHENDİSLİK</p>
+      <div class="profile-line"></div>
+      <span>Modern mimari, mühendislik ve yaşam alanları için çağdaş proje yaklaşımı.</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects"><div class="section-title"><div class="kicker">PROJELER</div><h2>Yaşamın Geleceğini İnşa Ediyoruz.</h2><p>Modern apartmanlardan lüks villalara kadar farklı ölçekte mimari proje konseptleri.</p></div>
+<div class="grid">
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Modern Apartman</h3><p>Çağdaş cephe, geniş balkonlar ve premium ortak alan konsepti.</p></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Lüks Villa</h3><p>Modern çizgiler, doğal malzemeler ve peyzaj bütünlüğü.</p></div></div>
+<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Dubleks Konut</h3><p>Fonksiyonel planlama ve modern yaşam için tasarlanmış konut.</p></div></div>
+</div></section>
+
+<section><div class="featured"><div class="featured-inner"><div class="kicker">ÖNE ÇIKAN PROJE</div><h2>Modern Mimari. Güçlü Mühendislik. Güvenilir Yapılar.</h2><p style="color:#d0d4da;line-height:1.8">HATİCE KARABAŞ MÜHENDİSLİK için tasarlanan premium konut geliştirme konsepti.</p></div></div></section>
+
+<section id="services"><div class="section-title"><div class="kicker">HİZMETLERİMİZ</div><h2>Projeyi Fikirden Yapıya Taşıyoruz.</h2></div>
+<div class="grid">
+<div class="card"><div class="card-body"><h3>Mimari Proje Tasarımı</h3><p>Modern ve işlevsel mimari proje çözümleri.</p></div></div>
+<div class="card"><div class="card-body"><h3>Mühendislik Hizmetleri</h3><p>Yapı ve mühendislik odaklı proje çözümleri.</p></div></div>
+<div class="card"><div class="card-body"><h3>Konut Projeleri</h3><p>Modern konut ve yaşam alanı geliştirme.</p></div></div>
+<div class="card"><div class="card-body"><h3>Villa ve Dubleks</h3><p>Özgün ve premium konut konseptleri.</p></div></div>
+<div class="card"><div class="card-body"><h3>3D Mimari Görselleştirme</h3><p>Fotogerçekçi proje sunumları.</p></div></div>
+<div class="card"><div class="card-body"><h3>Proje ve Yapı Danışmanlığı</h3><p>Planlama ve proje geliştirme danışmanlığı.</p></div></div>
+</div></section>
+
+<section id="process"><div class="section-title"><div class="kicker">PROJE SÜRECİ</div><h2>Fikirden Teslime.</h2></div><div class="timeline">
+<div class="step"><b>01</b><h3>Fikir</h3><p>İhtiyaç ve konsept.</p></div><div class="step"><b>02</b><h3>Mimari</h3><p>Tasarım ve planlama.</p></div><div class="step"><b>03</b><h3>Mühendislik</h3><p>Teknik çözümleme.</p></div><div class="step"><b>04</b><h3>3D Modelleme</h3><p>Görsel sunum.</p></div><div class="step"><b>05</b><h3>İnşaat</h3><p>Uygulama süreci.</p></div><div class="step"><b>06</b><h3>Teslim</h3><p>Son kontroller.</p></div>
+</div></section>
+
+<section id="contact"><div><div class="kicker">İLETİŞİM</div><h2 style="font-size:clamp(38px,5vw,62px)">Hayalinizdeki Yapıyı Birlikte Tasarlayalım.</h2><p style="color:var(--muted);line-height:1.8">Projenizi anlatın. Mimari ve mühendislik çözümünüz için ilk adımı birlikte atalım.</p></div>
+<form class="form" onsubmit="event.preventDefault();alert('Proje talebiniz alındı.');"><input required placeholder="Ad Soyad"><input required type="tel" placeholder="Telefon"><input required type="email" placeholder="E-posta"><select><option>Proje Türü</option><option>Apartman</option><option>Villa</option><option>Dubleks</option><option>Konut</option><option>Mühendislik</option><option>3D Görselleştirme</option></select><textarea placeholder="Projenizi kısaca anlatın"></textarea><button>PROJE TALEBİ GÖNDER</button></form></section>
+
+<footer class="footer"><b>HATİCE KARABAŞ MÜHENDİSLİK</b><span>© 2026 Tüm hakları saklıdır.</span></footer>
+</body></html>
