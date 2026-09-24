@@ -46,18 +46,117 @@ body{overflow-x:hidden}
 @media (min-width:1600px){body{font-size:18px}.hero-content{max-width:1100px}.hero h1{font-size:110px}}
 @media(max-width:700px){.profile-card{grid-template-columns:1fr;padding:25px;text-align:center}.profile-photo-wrap{width:230px;height:290px}.profile-line{margin:20px auto}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+/* CINEMATIC V3 */
+.cinematic-hero{isolation:isolate}
+.cinematic-hero:before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 75% 40%,#c7a66a22 0 2px,transparent 3px),linear-gradient(115deg,transparent 40%,#c7a66a12 50%,transparent 60%);pointer-events:none}
+.blueprint-grid{position:absolute;z-index:1;inset:0;opacity:.16;background-image:linear-gradient(#c7a66a 1px,transparent 1px),linear-gradient(90deg,#c7a66a 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 75%);animation:gridMove 18s linear infinite}
+@keyframes gridMove{to{background-position:55px 55px}}
+.hero-orbit{position:absolute;z-index:1;border:1px solid #c7a66a33;border-radius:50%;pointer-events:none}
+.orbit-one{width:650px;height:650px;right:-180px;top:15%;animation:orbit 18s linear infinite}
+.orbit-two{width:390px;height:390px;right:-50px;top:34%;border-style:dashed;animation:orbit 11s linear infinite reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.cinematic-strip{display:grid;grid-template-columns:repeat(5,1fr);padding:0 7%;background:#090b0e;border-top:1px solid #ffffff10;border-bottom:1px solid #ffffff10}
+.strip-item{padding:24px 15px;border-right:1px solid #ffffff0d;text-align:center}
+.strip-item:last-child{border:0}.strip-item span{display:block;color:#c7a66a;font-size:11px;letter-spacing:.2em;margin-bottom:7px}.strip-item b{font-size:13px;letter-spacing:.12em}
+.profile-photo-wrap:after{content:"";position:absolute;inset:-7px;border:1px solid #c7a66a66;border-radius:22px;transform:rotate(3deg);pointer-events:none}
+.featured{position:relative}.featured:after{content:"HATİCE KARABAŞ MÜHENDİSLİK";position:absolute;right:35px;top:30px;color:#fff9;font-size:11px;letter-spacing:.22em;writing-mode:vertical-rl}
+@media(max-width:850px){.cinematic-strip{grid-template-columns:repeat(2,1fr)}.orbit-one{width:420px;height:420px;right:-220px}.orbit-two{display:none}}
+@media(max-width:560px){.cinematic-strip{grid-template-columns:1fr 1fr;padding:0 5%}.strip-item{padding:18px 8px}.featured:after{display:none}}
+
+.reveal-section,.profile-section,.card,.stat,.step{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal-section.visible,.profile-section.visible,.card.visible,.stat.visible,.step.visible{opacity:1;transform:none}
+
+.category-nav{display:flex;flex-wrap:wrap;gap:9px;margin:-20px 0 32px}
+.cat-btn{background:#11151a;color:#cdd2d8;border:1px solid #ffffff16;border-radius:999px;padding:11px 17px;cursor:pointer;transition:.25s;font-size:13px}
+.cat-btn:hover,.cat-btn.active{background:#c7a66a;color:#101214;border-color:#c7a66a;font-weight:800}
+.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.project-card{background:#12161b;border:1px solid #ffffff0d;border-radius:10px;overflow:hidden;transition:.35s;min-width:0}
+.project-card.hidden{display:none}.project-card:hover{transform:translateY(-8px);border-color:#c7a66a66;box-shadow:0 25px 60px #0008}
+.project-image{height:235px;background-position:center;background-size:cover}
+.p1{background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=85')}
+.p2{background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85')}
+.p3{background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85')}
+.p4{background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85')}
+.p5{background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85')}
+.p6{background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85')}
+.p7{background-image:url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=1000&q=85')}
+.p8{background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=85')}
+.project-info{padding:20px}.project-info>span{font-size:10px;letter-spacing:.18em;color:#c7a66a;font-weight:800}.project-info h3{margin:8px 0}.project-info p{font-size:13px;line-height:1.6;color:#aeb4bc;min-height:42px}.project-open{border:0;background:none;color:#fff;padding:0;cursor:pointer;font-weight:700}
+.services-hub{background:#0e1115}.service-mega-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ffffff0c;border:1px solid #ffffff0c}.service-mega-grid>div{background:#0e1115;padding:30px;min-height:180px}.service-mega-grid b{color:#c7a66a}.service-mega-grid h3{font-size:21px}.service-mega-grid p{color:#9da5ae;line-height:1.6;font-size:14px}
+.project-modal{display:none;position:fixed;inset:0;z-index:100}.project-modal.open{display:grid;place-items:center}.modal-backdrop{position:absolute;inset:0;background:#000b;backdrop-filter:blur(12px)}.modal-box{position:relative;z-index:2;width:min(1050px,92vw);max-height:88vh;overflow:auto;background:#101419;border:1px solid #c7a66a44;border-radius:16px;box-shadow:0 40px 120px #000;display:grid;grid-template-columns:1fr 1fr}.modal-image{min-height:470px;background:center/cover}.modal-content{padding:48px}.modal-content h2{font-size:48px;margin:12px 0}.modal-content p{color:#aeb4bc;line-height:1.8}.modal-data{display:grid;gap:10px;margin:30px 0;color:#8f98a2;font-size:13px}.modal-data b{color:#fff}.modal-close{position:absolute;z-index:3;right:18px;top:12px;background:#0008;color:#fff;border:0;border-radius:50%;width:40px;height:40px;font-size:28px;cursor:pointer}
+@media(max-width:1100px){.project-grid{grid-template-columns:repeat(2,1fr)}.service-mega-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.project-grid,.service-mega-grid{grid-template-columns:1fr}.modal-box{grid-template-columns:1fr}.modal-image{min-height:280px}.modal-content{padding:30px}.modal-content h2{font-size:36px}}
+
+.topbar{position:fixed;z-index:20;top:0;left:0;right:0;height:30px;display:flex;align-items:center;justify-content:center;background:#080a0d;color:#9fa7b0;font-size:10px;letter-spacing:.18em;border-bottom:1px solid #ffffff0b}
+.topbar span{color:#c7a66a;margin:0 10px}
+nav{top:30px}
+.floating-contact{position:fixed;z-index:30;right:24px;bottom:24px;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;text-align:center;text-decoration:none;background:#c7a66a;color:#101214;font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.08em;box-shadow:0 12px 35px #0008;transition:.3s}
+.floating-contact:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 18px 50px #000b}
+.hero{min-height:100vh;padding-top:150px}
+.hero h1{letter-spacing:-.035em}
+.section-title{position:relative}
+.section-title:after{content:"";display:block;width:70px;height:2px;background:#c7a66a;margin-top:25px}
+.project-card{position:relative}
+.project-card:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,#ffffff08,transparent 30%,transparent 70%,#c7a66a08);z-index:1}
+.project-image{transition:transform .7s cubic-bezier(.2,.7,.2,1);filter:saturate(.92)}
+.project-card:hover .project-image{transform:scale(1.07);filter:saturate(1.08)}
+.project-info{position:relative;z-index:2}
+.service-mega-grid>div{transition:.3s;position:relative;overflow:hidden}
+.service-mega-grid>div:after{content:"";position:absolute;width:90px;height:90px;border:1px solid #c7a66a22;border-radius:50%;right:-35px;bottom:-35px;transition:.4s}
+.service-mega-grid>div:hover{background:#13181e;transform:translateY(-3px)}
+.service-mega-grid>div:hover:after{transform:scale(2);border-color:#c7a66a55}
+.form{box-shadow:0 25px 70px #0005}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:#c7a66a88;box-shadow:0 0 0 3px #c7a66a12}
+.btn{transition:.25s}.btn:hover{transform:translateY(-2px)}
+footer{margin-top:0}
+@media(max-width:560px){.topbar{font-size:8px;letter-spacing:.1em}.floating-contact{width:64px;height:64px;right:15px;bottom:15px}.hero{padding-top:135px}}
+
+.studio-section{background:linear-gradient(180deg,#0a0d11,#0d1116)}
+.studio-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:28px;margin-top:45px}
+.model-stage{height:560px;position:relative;overflow:hidden;border:1px solid #ffffff12;border-radius:24px;background:radial-gradient(circle at 50% 42%,#26313b 0,#11171d 38%,#090c10 78%);perspective:1000px;cursor:grab}
+.model-stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#c7a66a12 1px,transparent 1px),linear-gradient(90deg,#c7a66a12 1px,transparent 1px);background-size:45px 45px;transform:perspective(500px) rotateX(60deg) translateY(100px) scale(1.5);transform-origin:center bottom}
+.model-shadow{position:absolute;width:310px;height:75px;left:50%;bottom:88px;transform:translateX(-50%);background:#0009;filter:blur(22px);border-radius:50%}
+.building{position:absolute;left:50%;top:48%;width:230px;height:320px;transform-style:preserve-3d;transform:translate(-50%,-50%) rotateY(-24deg) rotateX(5deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tower{position:absolute;inset:0;background:linear-gradient(90deg,#343d45,#171d23 55%,#46515b);border:1px solid #ffffff25;box-shadow:inset 0 0 45px #0008,0 25px 55px #0009}
+.tower.front{transform:translateZ(58px);background:linear-gradient(180deg,#39444d,#171c21)}
+.tower.side{width:116px;left:auto;right:-58px;transform:rotateY(90deg);transform-origin:left}
+.tower.roof{height:22px;top:-22px;transform:translateZ(58px) rotateX(90deg);transform-origin:bottom;background:#59656d}
+.tower.windows{inset:22px 22px 18px;transform:translateZ(60px);background:repeating-linear-gradient(90deg,transparent 0 28px,#c7a66a88 29px 31px),repeating-linear-gradient(180deg,#d8e3e855 0 9px,transparent 10px 27px);opacity:.8}
+.tower.balcony{inset:auto 18px 32px;height:105px;transform:translateZ(66px);border:1px solid #c7a66a55;background:linear-gradient(#ffffff08,#0004)}
+.model-label{position:absolute;left:24px;bottom:22px;font-size:9px;letter-spacing:.22em;color:#9fa7b0}
+.studio-panel{padding:42px;border:1px solid #ffffff12;border-radius:24px;background:#11161c;display:flex;flex-direction:column;justify-content:center}
+.studio-panel h3{font-size:32px;margin:8px 0 15px}.studio-panel p{color:#9fa7b0;line-height:1.8}
+.mini-kicker{color:#c7a66a;font-size:10px;letter-spacing:.22em}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.specs div{border:1px solid #ffffff10;padding:16px;border-radius:12px}.specs b{color:#c7a66a;margin-right:8px}.specs span{font-size:12px;color:#cbd0d5}
+.model-controls{display:flex;gap:8px;margin-bottom:18px}.model-controls button{background:#171d23;border:1px solid #ffffff16;color:#fff;padding:11px 16px;border-radius:9px;cursor:pointer}.model-controls button:hover{border-color:#c7a66a;color:#c7a66a}
+@media(max-width:850px){.studio-grid{grid-template-columns:1fr}.model-stage{height:430px}.studio-panel{padding:28px}}
 </style>
 </head>
 <body>
-<nav><div class="logo">HATİCE KARABAŞ <span>MÜHENDİSLİK</span></div><div class="links"><a href="#about">Hakkımızda</a><a href="#profile">Profil</a><a href="#projects">Projeler</a><a href="#services">Hizmetler</a><a href="#process">Süreç</a><a href="#contact">İletişim</a></div></nav>
+<div class="topbar">HATİCE KARABAŞ MÜHENDİSLİK <span>•</span> MİMARİ · MÜHENDİSLİK · KONUT</div>
+<nav><div class="logo">HATİCE KARABAŞ <span>MÜHENDİSLİK</span></div><div class="links"><a href="#about">Hakkımızda</a><a href="#profile">Profil</a><a href="#projects">Projeler</a><a href="#services">Hizmetler</a><a href="#process">Süreç</a><a href="#studio">3D STÜDYO</a><a href="#contact">İletişim</a></div></nav>
 
-<header class="hero">
+<header class="hero cinematic-hero">
+<div class="blueprint-grid" aria-hidden="true"></div>
+<div class="hero-orbit orbit-one" aria-hidden="true"></div>
+<div class="hero-orbit orbit-two" aria-hidden="true"></div>
 <div class="hero-content">
 <div class="eyebrow">MİMARİ • MÜHENDİSLİK • YAPI</div>
 <h1>Geleceğin Yapılarını Bugünden Tasarlıyoruz.<small>HATİCE KARABAŞ MÜHENDİSLİK</small></h1>
 <p>Modern mühendislik, güçlü mimari ve güvenilir yapı çözümleriyle yaşam alanlarını geleceğe taşıyoruz.</p>
 <div class="buttons"><a class="btn primary" href="#projects">PROJELERİMİZ</a><a class="btn" href="#profile">HATİCE KARABAŞ</a><a class="btn" href="#contact">BİZE ULAŞIN</a></div>
-</div></header>
+</div>
+</header>
+
+<section class="cinematic-strip" aria-label="Proje türleri">
+  <div class="strip-item"><span>01</span><b>APARTMAN</b></div>
+  <div class="strip-item"><span>02</span><b>VİLLA</b></div>
+  <div class="strip-item"><span>03</span><b>DUBLEKS</b></div>
+  <div class="strip-item"><span>04</span><b>KONUT</b></div>
+  <div class="strip-item"><span>05</span><b>MÜHENDİSLİK</b></div>
+</section>
 
 <section id="about"><div class="section-title"><div class="kicker">HAKKIMIZDA</div><h2>Mühendislikte Güven, Mimariyle Gelecek.</h2><p>Hatice Karabaş Mühendislik; modern konut, villa, dubleks ve mühendislik projeleri için estetik, işlevsel ve teknoloji odaklı çözümler sunan premium bir yapı markası deneyimi sunar.</p></div>
 <div class="about"><div class="about-img"></div><div><p style="color:#b9bec6;line-height:1.9">Her projeyi yalnızca bir yapı olarak değil, uzun yıllar değer üretecek bir yaşam alanı olarak ele alan modern bir tasarım yaklaşımı.</p><div class="stats"><div class="stat"><b>Modern Tasarım</b><span>Çağdaş mimari yaklaşım</span></div><div class="stat"><b>Güçlü Mühendislik</b><span>Teknoloji odaklı çözümler</span></div><div class="stat"><b>Kaliteli Yapı</b><span>Detaylara odaklanan süreç</span></div><div class="stat"><b>Güvenilir Proje</b><span>Profesyonel proje yaklaşımı</span></div></div></div></div></section>
@@ -79,16 +178,86 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<section id="projects"><div class="section-title"><div class="kicker">PROJELER</div><h2>Yaşamın Geleceğini İnşa Ediyoruz.</h2><p>Modern apartmanlardan lüks villalara kadar farklı ölçekte mimari proje konseptleri.</p></div>
-<div class="grid">
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Modern Apartman</h3><p>Çağdaş cephe, geniş balkonlar ve premium ortak alan konsepti.</p></div></div>
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Lüks Villa</h3><p>Modern çizgiler, doğal malzemeler ve peyzaj bütünlüğü.</p></div></div>
-<div class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85')"></div><div class="card-body"><h3>Dubleks Konut</h3><p>Fonksiyonel planlama ve modern yaşam için tasarlanmış konut.</p></div></div>
-</div></section>
+
+<section id="projects" class="projects-hub">
+  <div class="section-title">
+    <div class="kicker">DİJİTAL PROJE KATALOĞU</div>
+    <h2>Projeleri Keşfedin.</h2>
+    <p>Apartmandan villaya, mühendislikten 3D görselleştirmeye kadar tüm proje alanlarını tek ekranda inceleyin.</p>
+  </div>
+
+  <div class="category-nav" role="tablist">
+    <button class="cat-btn active" data-filter="all">Tümü</button>
+    <button class="cat-btn" data-filter="konut">Konut</button>
+    <button class="cat-btn" data-filter="villa">Villa</button>
+    <button class="cat-btn" data-filter="dubleks">Dubleks</button>
+    <button class="cat-btn" data-filter="mimari">Mimari</button>
+    <button class="cat-btn" data-filter="muhendislik">Mühendislik</button>
+    <button class="cat-btn" data-filter="ticari">Ticari</button>
+    <button class="cat-btn" data-filter="kentsel">Kentsel</button>
+    <button class="cat-btn" data-filter="3d">3D & Görselleştirme</button>
+  </div>
+
+  <div class="project-grid" id="projectGrid">
+    <article class="project-card" data-category="konut" data-title="Modern Yaşam Rezidansı" data-type="Konut Projesi" data-status="Konsept">
+      <div class="project-image p1"></div><div class="project-info"><span>KONUT</span><h3>Modern Yaşam Rezidansı</h3><p>Çağdaş cephe, geniş balkonlar ve modern ortak yaşam alanları.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="villa" data-title="Prestij Villa" data-type="Villa Projesi" data-status="Konsept">
+      <div class="project-image p2"></div><div class="project-info"><span>VİLLA</span><h3>Prestij Villa</h3><p>Doğal taş, cam ve peyzaj bütünlüğüyle premium villa konsepti.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="dubleks" data-title="Çağdaş Dubleks" data-type="Dubleks Konut" data-status="Tasarım">
+      <div class="project-image p3"></div><div class="project-info"><span>DUBLEKS</span><h3>Çağdaş Dubleks</h3><p>Fonksiyonel planlama ve modern yaşam için tasarlanmış konut.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="mimari" data-title="Cephe Tasarım Serisi" data-type="Mimari Proje" data-status="Tasarım">
+      <div class="project-image p4"></div><div class="project-info"><span>MİMARİ</span><h3>Cephe Tasarım Serisi</h3><p>Modern cephe dili, malzeme kombinasyonları ve ışık senaryoları.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="muhendislik" data-title="Yapısal Çözüm Projesi" data-type="Mühendislik Projesi" data-status="Projelendirme">
+      <div class="project-image p5"></div><div class="project-info"><span>MÜHENDİSLİK</span><h3>Yapısal Çözüm Projesi</h3><p>Teknik projelendirme ve yapı odaklı mühendislik yaklaşımı.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="ticari" data-title="Modern İş Merkezi" data-type="Ticari Yapı" data-status="Konsept">
+      <div class="project-image p6"></div><div class="project-info"><span>TİCARİ</span><h3>Modern İş Merkezi</h3><p>Ofis, mağaza ve ticari kullanım için çağdaş yapı konsepti.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="kentsel" data-title="Yaşam Kompleksi" data-type="Kentsel Konut" data-status="Konsept">
+      <div class="project-image p7"></div><div class="project-info"><span>KENTSEL</span><h3>Yaşam Kompleksi</h3><p>Yeşil alanlar, konutlar ve sosyal yaşamı bir araya getiren konsept.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+    <article class="project-card" data-category="3d" data-title="3D Mimari Sunum" data-type="3D Görselleştirme" data-status="Sunum">
+      <div class="project-image p8"></div><div class="project-info"><span>3D</span><h3>3D Mimari Sunum</h3><p>Fotogerçekçi mimari görselleştirme ve proje sunum deneyimi.</p><button class="project-open">Projeyi İncele →</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="services-hub">
+  <div class="section-title"><div class="kicker">HİZMET KATEGORİLERİ</div><h2>Tek Çatı Altında Proje Çözümleri.</h2></div>
+  <div class="service-mega-grid">
+    <div><b>01</b><h3>Mimari Projeler</h3><p>Konsept, cephe, iç mekân ve peyzaj tasarımı.</p></div>
+    <div><b>02</b><h3>Mühendislik</h3><p>Statik, yapısal ve teknik proje çözümleri.</p></div>
+    <div><b>03</b><h3>Konut</h3><p>Apartman, rezidans ve toplu konut konseptleri.</p></div>
+    <div><b>04</b><h3>Villa & Dubleks</h3><p>Özgün ve premium yaşam alanları.</p></div>
+    <div><b>05</b><h3>Ticari Yapılar</h3><p>Ofis, plaza, mağaza ve karma kullanım yapıları.</p></div>
+    <div><b>06</b><h3>Kentsel Projeler</h3><p>Site ve büyük ölçekli yaşam alanı konseptleri.</p></div>
+    <div><b>07</b><h3>3D & Animasyon</h3><p>3D modelleme, render ve mimari animasyon.</p></div>
+    <div><b>08</b><h3>Danışmanlık</h3><p>Proje planlama, geliştirme ve sunum desteği.</p></div>
+  </div>
+</section>
+
+<div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Kapat">×</button>
+    <div class="modal-image" id="modalImage"></div>
+    <div class="modal-content">
+      <div class="kicker" id="modalType">PROJE</div>
+      <h2 id="modalTitle">Proje</h2>
+      <p id="modalDesc">Proje açıklaması</p>
+      <div class="modal-data"><span>Durum: <b id="modalStatus">Konsept</b></span><span>Marka: <b>HATİCE KARABAŞ MÜHENDİSLİK</b></span></div>
+      <a href="#contact" class="btn primary modal-contact">PROJE TALEBİ OLUŞTUR</a>
+    </div>
+  </div>
+</div>
 
 <section><div class="featured"><div class="featured-inner"><div class="kicker">ÖNE ÇIKAN PROJE</div><h2>Modern Mimari. Güçlü Mühendislik. Güvenilir Yapılar.</h2><p style="color:#d0d4da;line-height:1.8">HATİCE KARABAŞ MÜHENDİSLİK için tasarlanan premium konut geliştirme konsepti.</p></div></div></section>
 
-<section id="services"><div class="section-title"><div class="kicker">HİZMETLERİMİZ</div><h2>Projeyi Fikirden Yapıya Taşıyoruz.</h2></div>
+<section id="services" class="reveal-section"><div class="section-title"><div class="kicker">HİZMETLERİMİZ</div><h2>Projeyi Fikirden Yapıya Taşıyoruz.</h2></div>
 <div class="grid">
 <div class="card"><div class="card-body"><h3>Mimari Proje Tasarımı</h3><p>Modern ve işlevsel mimari proje çözümleri.</p></div></div>
 <div class="card"><div class="card-body"><h3>Mühendislik Hizmetleri</h3><p>Yapı ve mühendislik odaklı proje çözümleri.</p></div></div>
@@ -98,12 +267,107 @@ body{overflow-x:hidden}
 <div class="card"><div class="card-body"><h3>Proje ve Yapı Danışmanlığı</h3><p>Planlama ve proje geliştirme danışmanlığı.</p></div></div>
 </div></section>
 
-<section id="process"><div class="section-title"><div class="kicker">PROJE SÜRECİ</div><h2>Fikirden Teslime.</h2></div><div class="timeline">
+<section id="process" class="reveal-section"><div class="section-title"><div class="kicker">PROJE SÜRECİ</div><h2>Fikirden Teslime.</h2></div><div class="timeline">
 <div class="step"><b>01</b><h3>Fikir</h3><p>İhtiyaç ve konsept.</p></div><div class="step"><b>02</b><h3>Mimari</h3><p>Tasarım ve planlama.</p></div><div class="step"><b>03</b><h3>Mühendislik</h3><p>Teknik çözümleme.</p></div><div class="step"><b>04</b><h3>3D Modelleme</h3><p>Görsel sunum.</p></div><div class="step"><b>05</b><h3>İnşaat</h3><p>Uygulama süreci.</p></div><div class="step"><b>06</b><h3>Teslim</h3><p>Son kontroller.</p></div>
 </div></section>
 
-<section id="contact"><div><div class="kicker">İLETİŞİM</div><h2 style="font-size:clamp(38px,5vw,62px)">Hayalinizdeki Yapıyı Birlikte Tasarlayalım.</h2><p style="color:var(--muted);line-height:1.8">Projenizi anlatın. Mimari ve mühendislik çözümünüz için ilk adımı birlikte atalım.</p></div>
+
+<section id="studio" class="section studio-section">
+  <div class="container">
+    <div class="eyebrow">INTERAKTİF MİMARİ STÜDYO</div>
+    <h2 class="section-title">Projeyi ekranda <span>keşfedin.</span></h2>
+    <p class="section-lead">Mimari kütleyi farklı açılardan inceleyin; cephe, kat ve proje bilgileri arasında geçiş yapın.</p>
+
+    <div class="studio-grid">
+      <div class="model-stage" id="modelStage" aria-label="Etkileşimli mimari model">
+        <div class="model-shadow"></div>
+        <div class="building" id="building">
+          <div class="tower roof"></div>
+          <div class="tower facade front"></div>
+          <div class="tower facade side"></div>
+          <div class="tower windows"></div>
+          <div class="tower balcony"></div>
+        </div>
+        <div class="model-label">INTERACTIVE 3D CONCEPT</div>
+      </div>
+
+      <div class="studio-panel">
+        <div class="mini-kicker">ÖRNEK PROJE</div>
+        <h3>Modern Yaşam Rezidansı</h3>
+        <p>Çağdaş cephe dili, dengeli kütle kompozisyonu ve gün ışığını öne çıkaran açıklıklar üzerine kurgulanmış konsept sunum.</p>
+        <div class="specs">
+          <div><b>01</b><span>Modern cephe</span></div>
+          <div><b>02</b><span>Fonksiyonel planlama</span></div>
+          <div><b>03</b><span>3D görselleştirme</span></div>
+          <div><b>04</b><span>Proje danışmanlığı</span></div>
+        </div>
+        <div class="model-controls">
+          <button type="button" onclick="rotateModel(-1)">←</button>
+          <button type="button" onclick="resetModel()">SIFIRLA</button>
+          <button type="button" onclick="rotateModel(1)">→</button>
+        </div>
+        <a href="#contact" class="btn btn-primary">PROJE TALEBİ OLUŞTUR</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal-section"><div><div class="kicker">İLETİŞİM</div><h2 style="font-size:clamp(38px,5vw,62px)">Hayalinizdeki Yapıyı Birlikte Tasarlayalım.</h2><p style="color:var(--muted);line-height:1.8">Projenizi anlatın. Mimari ve mühendislik çözümünüz için ilk adımı birlikte atalım.</p></div>
 <form class="form" onsubmit="event.preventDefault();alert('Proje talebiniz alındı.');"><input required placeholder="Ad Soyad"><input required type="tel" placeholder="Telefon"><input required type="email" placeholder="E-posta"><select><option>Proje Türü</option><option>Apartman</option><option>Villa</option><option>Dubleks</option><option>Konut</option><option>Mühendislik</option><option>3D Görselleştirme</option></select><textarea placeholder="Projenizi kısaca anlatın"></textarea><button>PROJE TALEBİ GÖNDER</button></form></section>
 
-<footer class="footer"><b>HATİCE KARABAŞ MÜHENDİSLİK</b><span>© 2026 Tüm hakları saklıdır.</span></footer>
+<footer class="footer"><b>HATİCE KARABAŞ MÜHENDİSLİK</b><span>© <span id="year"></span> Hatice Karabaş Mühendislik. Tüm hakları saklıdır.</span></footer>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal-section,.profile-section,.card,.stat,.step').forEach(el=>observer.observe(el));
+</script>
+
+<script>
+(() => {
+  const buttons = document.querySelectorAll('.cat-btn');
+  const cards = document.querySelectorAll('.project-card');
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    cards.forEach(card => card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter));
+  }));
+
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalType = document.getElementById('modalType');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalStatus = document.getElementById('modalStatus');
+  const modalImage = document.getElementById('modalImage');
+
+  document.querySelectorAll('.project-open').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.project-card');
+      modalTitle.textContent = card.dataset.title;
+      modalType.textContent = card.dataset.type.toUpperCase();
+      modalDesc.textContent = card.querySelector('p').textContent;
+      modalStatus.textContent = card.dataset.status;
+      modalImage.className = 'modal-image ' + card.querySelector('.project-image').classList[1];
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+  });
+  const closeModal=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+  document.querySelector('.modal-close').addEventListener('click',closeModal);
+  document.querySelector('.modal-backdrop').addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+})();
+</script>
+
+<a class="floating-contact" href="#contact" aria-label="Proje iletişim">PROJE<br><b>TALEBİ</b></a>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+<script>
+let modelRotation = -24;
+function renderModel(){const b=document.getElementById('building'); if(b)b.style.transform=`translate(-50%,-50%) rotateY(${modelRotation}deg) rotateX(5deg)`;}
+function rotateModel(dir){modelRotation += dir*28; renderModel();}
+function resetModel(){modelRotation=-24; renderModel();}
+</script>
 </body></html>
